@@ -1,0 +1,31 @@
+{
+  "name": "news-app",
+  "version": "0.1.0",
+  "description": "Pilot Academy Workshop: React.js",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "http-server dist --silent",
+    "watch": "npm start & watchify . -o dist/app.js --verbose --debug --extension .jsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sulkowski/news-app.git"
+  },
+  "keywords": [
+    "pilot",
+    "react"
+  ],
+  "author": "Paweł Sułkowski <sulkowski.pawel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sulkowski/news-app/issues"
+  },
+  "homepage": "https://github.com/sulkowski/news-app",
+  "devDependencies": {
+    "watchify": "^2.4.0"
+  },
+  "dependencies": {
+    "browserify": "^9.0.3",
+    "http-server": "^0.7.5"
+  }
+}
