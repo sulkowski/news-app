@@ -1,31 +1,38 @@
 {
   "name": "news-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pilot Academy Workshop: React.js",
+  "keywords": [
+    "pilot",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sulkowski/news-app.git"
+  },
+  "homepage": "https://github.com/sulkowski/news-app",
+  "bugs": {
+    "url": "https://github.com/sulkowski/news-app/issues"
+  },
+  "author": "Paweł Sułkowski <sulkowski.pawel@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "watchify": "^2.5.0"
+  },
+  "dependencies": {
+    "browserify": "^9.0.3",
+    "http-server": "^0.7.5",
+    "react": "^0.13.1",
+    "reactify": "^1.1.0"
+  },
   "main": "src/app.js",
   "scripts": {
     "start": "http-server dist --silent",
     "watch": "npm start & watchify . -o dist/app.js --verbose --debug --extension .jsx"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sulkowski/news-app.git"
-  },
-  "keywords": [
-    "pilot",
-    "react"
-  ],
-  "author": "Paweł Sułkowski <sulkowski.pawel@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sulkowski/news-app/issues"
-  },
-  "homepage": "https://github.com/sulkowski/news-app",
-  "devDependencies": {
-    "watchify": "^2.4.0"
-  },
-  "dependencies": {
-    "browserify": "^9.0.3",
-    "http-server": "^0.7.5"
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
   }
 }
