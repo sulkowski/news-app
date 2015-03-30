@@ -7,7 +7,7 @@ module.exports = React.createClass({
       <ul>
         {this.props.stories.map(function(story) {
           return(
-            <StoryItem key={story.id} story={story}/>
+            <StoryItem key={story.id} story={story} />
           );
         })}
       </ul>
