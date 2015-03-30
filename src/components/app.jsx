@@ -1,5 +1,5 @@
 var React       = require('react');
-var StoriesList = require('./stories/stories_list.js')
+var StoriesList = require('./stories/stories_list.jsx')
 
 module.exports = React.createClass({
   getInitialState: function() {

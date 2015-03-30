@@ -1,5 +1,5 @@
 var React     = require('react');
-var StoryItem = require('./story_item.js')
+var StoryItem = require('./story_item.jsx')
 
 module.exports = React.createClass({
   render: function() {
