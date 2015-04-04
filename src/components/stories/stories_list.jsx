@@ -1,16 +1,36 @@
-var React     = require('react');
-var StoryItem = require('./story_item.jsx')
+var React  = require('react');
+var jQuery = require('jquery');
+
+var ListGroup = require('react-bootstrap').ListGroup;
+
+var StoryItem = require('./story_item');
 
 module.exports = React.createClass({
+  getInitialState: function() {
+    return {
+      stories: []
+    }
+  },
+
+  componentDidMount: function() {
+    jQuery.get(this.props.stories_url, function(stories) {
+      if (this.isMounted()) {
+        this.setState({
+          stories: stories
+        });
+      }
+    }.bind(this));
+  },
+
   render: function() {
     return (
-      <ul>
-        {this.props.stories.map(function(story) {
+      <ListGroup>
+        {this.state.stories.map(function(story) {
           return(
-            <StoryItem key={story.id} story={story} />
+            <StoryItem key={story.id} {...story} />
           );
         })}
-      </ul>
+      </ListGroup>
     );
   }
 });

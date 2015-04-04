@@ -1,13 +1,15 @@
 var React = require('react');
 
+var ListGroupItem = require('react-bootstrap').ListGroupItem;
+var Badge         = require('react-bootstrap').Badge;
+
 module.exports = React.createClass({
   render: function() {
     return(
-      <li>
-        <a href={this.props.story.url}>
-          <span>({this.props.story.score})</span> | {this.props.story.title}
-        </a>
-      </li>
+      <ListGroupItem href={this.props.url}>
+        {this.props.title}
+        <Badge>{this.props.score}</Badge>
+      </ListGroupItem>
     );
   }
 });
