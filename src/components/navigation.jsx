@@ -1,18 +1,20 @@
-var React = require('react');
-
-var Panel   = require('react-bootstrap').Panel
-var Nav     = require('react-bootstrap').Nav;
-var NavItem = require('react-bootstrap').NavItem;
+var React                = require('react');
+var Bootstrap            = require('react-bootstrap');
+var ReactRouterBootstrap = require('react-router-bootstrap');
 
 module.exports = React.createClass({
   render: function() {
     return (
-      <Panel>
-        <Nav bsStyle='pills' stacked activeKey={1}>
-          <NavItem eventKey={1} href='#'>Popular</NavItem>
-          <NavItem eventKey={2} href='#'>Recent</NavItem>
-        </Nav>
-      </Panel>
+      <Bootstrap.Panel>
+        <Bootstrap.Nav bsStyle='pills' stacked>
+          <ReactRouterBootstrap.NavItemLink to='popular'>
+            Popular
+          </ReactRouterBootstrap.NavItemLink>
+          <ReactRouterBootstrap.NavItemLink to='recent'>
+            Recent
+          </ReactRouterBootstrap.NavItemLink>
+        </Bootstrap.Nav>
+      </Bootstrap.Panel>
     );
   }
 });

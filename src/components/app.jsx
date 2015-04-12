@@ -1,29 +1,24 @@
-var React  = require('react');
-
-var Navbar = require('react-bootstrap').Navbar;
-var Grid   = require('react-bootstrap').Grid;
-var Row    = require('react-bootstrap').Row;
-var Col    = require('react-bootstrap').Col;
-
-var Navigation  = require('./navigation');
-var StoriesList = require('./stories/stories_list');
+var React      = require('react');
+var Router     = require('react-router');
+var Bootstrap  = require('react-bootstrap');
+var Navigation = require('./navigation');
 
 module.exports = React.createClass({
   render: function() {
     return (
-      <Grid style={{padding: '20px 0'}}>
-        <Navbar brand='NewsApp'></Navbar>
-        <Row>
-          <Col md={3}>
-            <Navigation></Navigation>
-          </Col>
-          <Col md={9}>
+      <Bootstrap.Grid style={{padding: '20px 0'}}>
+        <Bootstrap.Navbar brand='NewsApp' />
+        <Bootstrap.Row>
+          <Bootstrap.Col md={3}>
+            <Navigation />
+          </Bootstrap.Col>
+          <Bootstrap.Col md={9}>
             <section>
-              <StoriesList stories_url={this.props.backend_host + '/stories'} />
+              <Router.RouteHandler />
             </section>
-          </Col>
-        </Row>
-      </Grid>
+          </Bootstrap.Col>
+        </Bootstrap.Row>
+      </Bootstrap.Grid>
     );
   }
 });

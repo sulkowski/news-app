@@ -1,4 +1,7 @@
-var React = require('react');
-var App   = require('./components/app')
+var React  = require('react');
+var Router = require('react-router');
+var routes = require('./routes');
 
-React.render(<App backend_host={process.env.BACKEND_HOST} />, document.body);
+Router.run(routes, function (Handler) {
+  React.render(<Handler/>, document.body);
+});
