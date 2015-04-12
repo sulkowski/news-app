@@ -33,7 +33,8 @@
   "main": "src/app.js",
   "scripts": {
     "start": "http-server dist --silent",
-    "watch": "npm start & watchify src/app.js -o dist/app.js --verbose --debug --extension .jsx"
+    "watch": "npm start & watchify src/app.js -o dist/app.js --verbose --debug --extension .jsx",
+    "postinstall": "browserify src/app.js -o dist/app.js --extension .jsx"
   },
   "browserify": {
     "transform": [
